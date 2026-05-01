@@ -5,18 +5,14 @@ library(data.table)
 library(ggplot2)
 
 #runs the fgsea package with built in GMT and user pathways
-runGSEApreranked <- function(pathways) {
-  #data("examplePathways")
-  data("exampleRanks")
+runGSEApreranked <- function(pathways, ranks, nperm = 1000) {
   set.seed(42)
-  
-  fgseaRes <- fgsea(pathways = pathways,
-                    stats    = exampleRanks,
-                    eps      = 0.0,
-                    minSize  = 15,
-                    maxSize  = 500)
-  
-  return(fgseaRes)
+  fgsea(pathways = pathways,
+        stats    = ranks,
+        eps      = 0.0,
+        minSize  = 15,
+        maxSize  = 500,
+        nPermSimple = nperm)
 }
 
 plotPathways <- function(pathway_names, pathways, ranks) {

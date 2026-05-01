@@ -51,7 +51,7 @@ ui <- page_navbar(
         selectInput(
           "null_model",
           "Select method of estimating enrichment score significance:",
-          c("Gene label permutation" = "gene_label_permutation",
+          c("Gene set permutation" = "gene_set_permutation",
             "Gamma distribution approximation (blitzGSEA)" = "blitzgsea",
             "Estimation via moments of test statistic (npGSEA)" = "npgsea")
         ), 
@@ -74,56 +74,36 @@ server <- function(input, output) {
   # ==== check input gene set file formatting =====
   output$gene_set_check <- renderText({
     req(input$user_gene_set)
-    
-    file_path <- input$user_gene_set$datapath
-    
-    if (user_set_check(file_path) == TRUE) {
-      "Success!"
-    } else {
-      "Incorrect format"
-    }
+    if (user_set_check(input$user_gene_set$datapath)) "Success!" else "Incorrect format"
   })
   
   # ==== check input CHIP file formatting =====
   output$CHIP_check <- renderText({
     req(input$chip_file)
-    
-    file_path <- input$chip_file$datapath
-    
-    if (user_CHIP_check(file_path) == TRUE) { 
-      "Success!"
-    } else {
-      "Incorrect format"
-    }
+    if (user_CHIP_check(input$chip_file$datapath)) "Success!" else "Incorrect format"
   })
   
-  #========== MAIN PANEL - GSEA RESULTS ===========================
+  
+  # ==== RUNNING GSEA =====
+  data("examplePathways")
+  data("exampleRanks")
+    
   gsea_results <- reactiveVal(NULL)
-  ranks <- reactiveVal(NULL)
-  
-  observeEvent(input$user_gene_set, {
-    message("run button fired, ranks is null: ", is.null(ranks()))
-    rnk <- read.table(input$user_gene_set$datapath, header = TRUE, sep = "\t")
-    ranks(setNames(rnk[[2]], rnk[[1]]))
-  })
-  
   has_run <- reactiveVal(FALSE)
-  
+    
+  # example data, REMOVE LATER
+  ranks <- reactiveVal(setNames(exampleRanks, names(exampleRanks)))
+    
   observeEvent(input$run, {
-    req(ranks())
-    
-    data("examplePathways")
-    
-    if (input$null_model == "gene_label_permutation") {
+    if (input$null_model == "gene_set_permutation") {
       res <- runGSEApreranked(examplePathways, ranks(), nperm = input$permutations)
+      message("fgsea returned ", nrow(res), " rows")
       gsea_results(res)
       has_run(TRUE)
-    }
-    # PUT BLITZGSEA AND NPGSEA HERE
+     }
   })
-  
+    
   output$GSEA_RESULTS <- renderUI({
-    #main panel for GSEA results
     if (!has_run()) {
       p("Waiting for user to select parameters and start run.")
     } else {
@@ -133,18 +113,20 @@ server <- function(input, output) {
       )
     }
   })
-  
+    
   output$gsea_table <- renderTable({
     req(gsea_results())
     gsea_results() |> arrange(padj) |> head(20) |> select(pathway, pval, padj, NES)
   })
-  
+    
   output$gsea_plot <- renderPlot({
-    req(gsea_results(), ranks())
+    req(gsea_results())
     top_pathway <- gsea_results() |> arrange(padj) |> pull(pathway) |> head(1)
-    plotPathways(top_pathway, examplePathways, ranks())[[1]]
+    plots <- plotPathways(top_pathway, examplePathways, ranks())
+    req(length(plots) > 0)
+    plots[[1]]
   })
-  
+    
 } # closes server
 
 shinyApp(ui = ui, server = server)
