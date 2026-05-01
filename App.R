@@ -6,11 +6,10 @@ library(tidyverse)
 library(ggplot2)
 library(dplyr)
 
-# most of the layout is based off this file:
-# source(system.file('extdata', 'Run.GSEA.R', package = 'GSEA'))
 source("gene_set_val.R")
-
-pre = TRUE #tick for when parameters are submitted GET RID OF THIS LATER
+source("GSEApreranked.R")
+source("blitzGSEA.R") # might have to interace with reticulate
+source("npGSEA.R")
 
 ui <- page_navbar(
   
@@ -25,7 +24,7 @@ ui <- page_navbar(
         
         #=== upload file and make sure it is formatted correctly ====
         fileInput("user_gene_set",
-                  label = "Upload your RNK-formatted gene set file:"
+                  label = "Upload your .RNK-formatted gene set file:"
                   # ADD DROP HEADER CHECK OPTION
         ),
         textOutput("gene_set_check"),
@@ -36,7 +35,7 @@ ui <- page_navbar(
                       value = FALSE),
         conditionalPanel(
           condition = "input.collapsed == true",
-          fileInput("chip_file", "Upload CHIP file:"),
+          fileInput("chip_file", "Upload .CHIP file:"),
           textOutput("CHIP_check")
         ),
         
@@ -63,14 +62,7 @@ ui <- page_navbar(
       ),
       
       # main panel — results go here
-      div(
-        if (pre) {
-          p("Waiting for user to select parameters")
-        } else {
-          p("Running GSEA with selected parameters!")
-          # figure out how to do a cool animation here !!
-        }
-      )
+      uiOutput("GSEA_RESULTS")
     )
   )
   
@@ -86,9 +78,9 @@ server <- function(input, output) {
     file_path <- input$user_gene_set$datapath
     
     if (user_set_check(file_path) == TRUE) {
-      "No errors detected :)"
+      "Success!"
     } else {
-      "Incorrect format :("
+      "Incorrect format"
     }
   })
   
@@ -99,10 +91,58 @@ server <- function(input, output) {
     file_path <- input$chip_file$datapath
     
     if (user_CHIP_check(file_path) == TRUE) { 
-      "No errors detected :0"
+      "Success!"
     } else {
-      "Incorrect format :P"
+      "Incorrect format"
     }
+  })
+  
+  #========== MAIN PANEL - GSEA RESULTS ===========================
+  gsea_results <- reactiveVal(NULL)
+  ranks <- reactiveVal(NULL)
+  
+  observeEvent(input$user_gene_set, {
+    message("run button fired, ranks is null: ", is.null(ranks()))
+    rnk <- read.table(input$user_gene_set$datapath, header = TRUE, sep = "\t")
+    ranks(setNames(rnk[[2]], rnk[[1]]))
+  })
+  
+  has_run <- reactiveVal(FALSE)
+  
+  observeEvent(input$run, {
+    req(ranks())
+    
+    data("examplePathways")
+    
+    if (input$null_model == "gene_label_permutation") {
+      res <- runGSEApreranked(examplePathways, ranks(), nperm = input$permutations)
+      gsea_results(res)
+      has_run(TRUE)
+    }
+    # PUT BLITZGSEA AND NPGSEA HERE
+  })
+  
+  output$GSEA_RESULTS <- renderUI({
+    #main panel for GSEA results
+    if (!has_run()) {
+      p("Waiting for user to select parameters and start run.")
+    } else {
+      tagList(
+        tableOutput("gsea_table"),
+        plotOutput("gsea_plot")
+      )
+    }
+  })
+  
+  output$gsea_table <- renderTable({
+    req(gsea_results())
+    gsea_results() |> arrange(padj) |> head(20) |> select(pathway, pval, padj, NES)
+  })
+  
+  output$gsea_plot <- renderPlot({
+    req(gsea_results(), ranks())
+    top_pathway <- gsea_results() |> arrange(padj) |> pull(pathway) |> head(1)
+    plotPathways(top_pathway, examplePathways, ranks())[[1]]
   })
   
 } # closes server

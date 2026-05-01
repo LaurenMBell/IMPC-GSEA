@@ -6,7 +6,7 @@ user_set_check <- function(infile) {
   
   if (ncol(df) != 2) { 
     return(FALSE)
-    }
+  }
   
   #check for tab-delim
   
@@ -23,4 +23,3 @@ drop_header <- function(infile) {
   #drop header of input files for RNK or CHIP
   
 }
-
