@@ -9,7 +9,9 @@ runGSEApreranked <- function(pathways, ranks, nperm = 1000) {
   set.seed(42)
   fgsea(pathways = pathways,
         stats    = ranks,
-        eps      = 0.0,
+        #"For some pathways, in reality P-values are less than 1e-10. 
+        #You can set the `eps` argument to zero for better estimation."
+        eps      = 0.0, 
         minSize  = 15,
         maxSize  = 500,
         nPermSimple = nperm)
