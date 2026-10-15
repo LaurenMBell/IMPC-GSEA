@@ -1,0 +1,731 @@
+mp_term_id,mp_term_name,rows,genes
+MP:0011100,"preweaning lethality, complete penetrance",3935,2215
+MP:0011110,"preweaning lethality, incomplete penetrance",1426,891
+MP:0001399,hyperactivity,2596,750
+MP:0000689,abnormal spleen morphology,846,611
+MP:0002060,abnormal skin morphology,777,607
+MP:0013292,embryonic lethality prior to organogenesis,576,573
+MP:0002968,increased circulating alkaline phosphatase level,525,501
+MP:0001402,decreased locomotor activity,1218,495
+MP:0002135,abnormal kidney morphology,561,470
+MP:0001325,abnormal retina morphology,524,466
+MP:0002092,abnormal eye morphology,509,450
+MP:0009142,decreased prepulse inhibition,950,425
+MP:0001417,decreased exploration in new environment,476,421
+MP:0000691,enlarged spleen,507,406
+MP:0000266,abnormal heart morphology,452,402
+MP:0003795,abnormal bone structure,419,396
+MP:0010124,decreased bone mineral content,580,396
+MP:0010024,increased total body fat amount,566,390
+MP:0000702,enlarged lymph nodes,466,384
+MP:0003960,increased lean body mass,483,381
+MP:0001304,cataract,388,379
+MP:0000274,enlarged heart,399,365
+MP:0001697,abnormal embryo size,448,364
+MP:0013293,embryonic lethality prior to tooth bud stage,364,362
+MP:0010053,decreased grip strength,475,356
+MP:0003961,decreased lean body mass,517,353
+MP:0001925,male infertility,352,345
+MP:0004738,abnormal auditory brainstem response,712,337
+MP:0001488,increased startle reflex,502,333
+MP:0002941,increased circulating alanine transaminase level,332,325
+MP:0000063,decreased bone mineral density,327,316
+MP:0002833,increased heart weight,364,312
+MP:0004924,abnormal behavior,455,310
+MP:0002075,abnormal coat/hair pigmentation,537,299
+MP:0000598,abnormal liver morphology,345,289
+MP:0001146,abnormal testis morphology,296,285
+MP:0005343,increased circulating aspartate transaminase level,288,285
+MP:0010025,decreased total body fat amount,362,283
+MP:0010123,increased bone mineral content,341,280
+MP:0013279,increased fasting circulating glucose level,286,280
+MP:0001258,decreased body length,292,271
+MP:0001147,small testis,278,269
+MP:0003984,embryonic growth retardation,312,264
+MP:0002590,increased mean corpuscular volume,271,262
+MP:0005560,decreased circulating glucose level,270,257
+MP:0020870,decreased thigmotaxis,566,257
+MP:0001303,abnormal lens morphology,359,250
+MP:0000709,enlarged thymus,290,248
+MP:0005419,decreased circulating serum albumin level,258,248
+MP:0000703,abnormal thymus morphology,294,247
+MP:0005178,increased circulating cholesterol level,254,241
+MP:0005562,decreased mean corpuscular hemoglobin,256,239
+MP:0010097,abnormal retina blood vessel morphology,254,237
+MP:0005561,increased mean corpuscular hemoglobin,241,235
+MP:0010067,increased red blood cell distribution width,241,231
+MP:0002591,decreased mean corpuscular volume,240,227
+MP:0000218,increased leukocyte cell number,232,224
+MP:0002339,abnormal lymph node morphology,271,217
+MP:0000219,increased neutrophil cell number,303,216
+MP:0001289,persistence of hyaloid vascular system,222,216
+MP:0002792,abnormal retina vasculature morphology,217,215
+MP:0002989,small kidney,241,215
+MP:0002699,abnormal vitreous body morphology,221,214
+MP:0005293,impaired glucose tolerance,231,214
+MP:0001297,microphthalmia,234,207
+MP:0001406,abnormal gait,217,203
+MP:0001556,increased circulating HDL cholesterol level,208,200
+MP:0002875,decreased erythrocyte cell number,210,198
+MP:0010052,increased grip strength,234,198
+MP:0001529,abnormal vocalization,194,191
+MP:0005016,decreased lymphocyte cell number,221,191
+MP:0002059,abnormal seminal vesicle morphology,193,190
+MP:0003068,enlarged kidney,202,190
+MP:0002599,increased mean platelet volume,192,186
+MP:0002764,short tibia,216,185
+MP:0002874,decreased hemoglobin content,203,184
+MP:0005344,increased circulating bilirubin level,190,184
+MP:0011965,decreased total retina thickness,312,183
+MP:0001785,edema,211,180
+MP:0005565,increased blood urea nitrogen level,189,180
+MP:0002574,increased vertical activity,187,178
+MP:0000221,decreased leukocyte cell number,181,177
+MP:0001120,abnormal uterus morphology,175,175
+MP:0005179,decreased circulating cholesterol level,188,174
+MP:0005553,increased circulating creatinine level,176,173
+MP:0000208,decreased hematocrit,185,171
+MP:0000692,small spleen,191,171
+MP:0000195,decreased circulating calcium level,169,168
+MP:0001566,increased circulating phosphate level,172,167
+MP:0001392,abnormal locomotor behavior,167,165
+MP:0000186,decreased circulating HDL cholesterol level,169,161
+MP:0001293,anophthalmia,175,161
+MP:0013278,decreased fasting circulating glucose level,163,160
+MP:0001513,limb grasping,163,156
+MP:0005011,increased eosinophil cell number,234,156
+MP:0001262,decreased body weight,347,155
+MP:0003179,thrombocytopenia,160,153
+MP:0005633,increased circulating sodium level,153,152
+MP:0001489,decreased startle reflex,153,151
+MP:0000062,increased bone mineral density,149,149
+MP:0005567,decreased circulating total protein level,154,149
+MP:0000220,increased monocyte cell number,201,147
+MP:0001926,female infertility,148,145
+MP:0005292,improved glucose tolerance,170,144
+MP:0002606,increased basophil cell number,208,143
+MP:0000194,increased circulating calcium level,148,142
+MP:0020421,increased freezing behavior,159,142
+MP:0001552,increased circulating triglyceride level,139,135
+MP:0005641,increased mean corpuscular hemoglobin concentration,136,134
+MP:0010506,prolonged RR interval,137,134
+MP:0000367,abnormal coat/ hair morphology,164,133
+MP:0000745,tremors,132,130
+MP:0002966,decreased circulating alkaline phosphatase level,135,130
+MP:0005333,decreased heart rate,131,128
+MP:0004952,increased spleen weight,132,127
+MP:0001486,abnormal startle reflex,136,126
+MP:0013294,prenatal lethality prior to heart atrial septation,122,121
+MP:0005642,decreased mean corpuscular hemoglobin concentration,122,119
+MP:0002644,decreased circulating triglyceride level,122,118
+MP:0008806,increased circulating amylase level,117,113
+MP:0002100,abnormal tooth morphology,159,112
+MP:0000601,small liver,121,109
+MP:0011874,enlarged urinary bladder,115,109
+MP:0001312,abnormal cornea morphology,110,108
+MP:0001914,hemorrhage,134,108
+MP:0005568,increased circulating total protein level,109,107
+MP:0001711,abnormal placenta morphology,153,104
+MP:0001364,decreased anxiety-related response,104,103
+MP:0001510,abnormal coat appearance,177,103
+MP:0002631,abnormal epididymis morphology,106,103
+MP:0005627,increased circulating potassium level,103,103
+MP:0011239,abnormal skin coloration,111,102
+MP:0000438,abnormal cranium morphology,101,100
+MP:0001314,cornea opacity,101,100
+MP:0001415,increased exploration in new environment,105,100
+MP:0005278,abnormal cholesterol homeostasis,100,99
+MP:0005013,increased lymphocyte cell number,105,98
+MP:0003731,abnormal retina outer nuclear layer morphology,153,96
+MP:0002608,increased hematocrit,95,94
+MP:0005505,thrombocytosis,96,93
+MP:0005564,increased hemoglobin content,94,92
+MP:0009709,hydrometra,92,92
+MP:0005566,decreased blood urea nitrogen level,92,91
+MP:0003720,abnormal neural tube closure,96,90
+MP:0000428,abnormal craniofacial morphology,99,89
+MP:0001126,abnormal ovary morphology,89,89
+MP:0004931,enlarged epididymis,89,88
+MP:0002152,abnormal brain morphology,113,87
+MP:0005554,decreased circulating creatinine level,88,87
+MP:0001523,impaired righting response,90,86
+MP:0005559,increased circulating glucose level,86,86
+MP:0003019,increased circulating chloride level,85,85
+MP:0008259,abnormal optic disk morphology,90,85
+MP:0002111,abnormal tail morphology,114,83
+MP:0001700,abnormal embryo turning,87,82
+MP:0010088,decreased circulating fructosamine level,83,82
+MP:0000443,abnormal snout morphology,93,81
+MP:0002151,abnormal neural tube morphology,90,81
+MP:0002965,increased circulating serum albumin level,82,81
+MP:0003733,abnormal retina inner nuclear layer morphology,136,81
+MP:0000157,abnormal sternum morphology,87,80
+MP:0002098,abnormal vibrissa morphology,85,80
+MP:0003131,increased erythrocyte cell number,82,80
+MP:0008810,increased circulating iron level,81,80
+MP:0011396,abnormal sleep behavior,157,80
+MP:0002834,decreased heart weight,92,78
+MP:0000538,abnormal urinary bladder morphology,75,72
+MP:0003020,decreased circulating chloride level,71,71
+MP:0000198,decreased circulating phosphate level,71,70
+MP:0004599,abnormal vertebral arch morphology,110,70
+MP:0002079,increased circulating insulin level,69,68
+MP:0002110,abnormal digit morphology,118,68
+MP:0002757,decreased vertical activity,70,68
+MP:0003743,abnormal facial morphology,102,68
+MP:0003917,increased kidney weight,85,68
+MP:0001148,enlarged testis,67,66
+MP:0011960,abnormal eye anterior chamber depth,78,66
+MP:0001944,abnormal pancreas morphology,78,65
+MP:0004151,decreased circulating iron level,65,65
+MP:0001284,absent vibrissae,65,64
+MP:0008935,decreased mean platelet volume,65,64
+MP:0001257,increased body length,60,60
+MP:0001614,abnormal blood vessel morphology,67,59
+MP:0000470,abnormal stomach morphology,64,58
+MP:0003231,abnormal placenta vasculature,70,58
+MP:0001157,small seminal vesicle,58,57
+MP:0000111,cleft palate,60,56
+MP:0002953,thick ventricular wall,71,56
+MP:0006243,impaired pupillary reflex,56,56
+MP:0003232,abnormal forebrain development,56,55
+MP:0001175,abnormal lung morphology,59,54
+MP:0001363,increased anxiety-related response,56,54
+MP:0004906,enlarged uterus,52,52
+MP:0011495,abnormal head shape,57,52
+MP:0002188,small heart,57,51
+MP:0010068,decreased red blood cell distribution width,52,51
+MP:0004122,abnormal sinus arrhythmia,50,50
+MP:0006358,absent pinna reflex,53,50
+MP:0001891,hydrocephaly,54,49
+MP:0004609,vertebral fusion,49,49
+MP:0002797,increased thigmotaxis,111,48
+MP:0004174,abnormal spine curvature,51,48
+MP:0008528,polycystic kidney,52,48
+MP:0002702,decreased circulating free fatty acids level,47,46
+MP:0010379,decreased respiratory quotient,47,46
+MP:0000137,abnormal vertebrae morphology,46,45
+MP:0003717,pallor,45,45
+MP:0003864,abnormal midbrain development,46,45
+MP:0004258,abnormal placenta size,51,45
+MP:0009141,increased prepulse inhibition,63,45
+MP:0010090,increased circulating creatine kinase level,47,45
+MP:0000182,increased circulating LDL cholesterol level,46,44
+MP:0000222,decreased neutrophil cell number,58,44
+MP:0003385,abnormal body wall morphology,45,44
+MP:0006203,eye hemorrhage,45,44
+MP:0009476,enlarged cecum,53,44
+MP:0002626,increased heart rate,43,43
+MP:0003921,abnormal heart left ventricle morphology,80,43
+MP:0004357,long tibia,46,43
+MP:0005635,decreased circulating bilirubin level,43,42
+MP:0006108,abnormal hindbrain development,43,42
+MP:0010392,prolonged QRS complex duration,42,42
+MP:0000494,abnormal cecum morphology,48,41
+MP:0001512,trunk curl,45,41
+MP:0001554,increased circulating free fatty acids level,41,41
+MP:0000599,enlarged liver,43,40
+MP:0001391,abnormal tail movements,41,40
+MP:0005385,cardiovascular system phenotype,40,39
+MP:0011962,increased cornea thickness,43,39
+MP:0002884,abnormal pharyngeal arch morphology,38,38
+MP:0005632,decreased circulating aspartate transaminase level,39,38
+MP:0010393,shortened QRS complex duration,38,38
+MP:0020420,abnormal freezing behavior,41,38
+MP:0002109,abnormal limb morphology,42,37
+MP:0012362,increased large unstained cell number,49,37
+MP:0000432,abnormal head morphology,39,36
+MP:0000455,abnormal maxilla morphology,38,36
+MP:0002768,small adrenal glands,37,36
+MP:0004953,decreased spleen weight,36,36
+MP:0008805,decreased circulating amylase level,36,35
+MP:0000223,decreased monocyte cell number,40,34
+MP:0000706,small thymus,37,34
+MP:0002896,abnormal bone mineralization,34,34
+MP:0005599,increased cardiac muscle contractility,46,34
+MP:0005634,decreased circulating sodium level,34,34
+MP:0010850,"increased effector memory CD8-positive, alpha-beta T cell number",41,34
+MP:0001319,irregularly shaped pupil,33,33
+MP:0001691,abnormal somite shape,33,33
+MP:0004832,enlarged ovary,33,33
+MP:0013772,increased effector memory T-helper cell number,48,33
+MP:0001322,abnormal iris morphology,33,32
+MP:0002932,abnormal joint morphology,34,32
+MP:0003054,spina bifida,49,32
+MP:0003233,prolonged QT interval,32,32
+MP:0005628,decreased circulating potassium level,32,32
+MP:0010935,increased airway resistance,57,32
+MP:0011886,increased circulating lipase level,32,32
+MP:0000160,kyphosis,31,31
+MP:0003036,vertebral transformation,32,31
+MP:0003928,increased heart rate variability,31,31
+MP:0008079,"decreased CD8-positive, alpha-beta T cell number",39,31
+MP:0011959,abnormal eye posterior chamber depth,34,31
+MP:0000639,abnormal adrenal gland morphology,31,30
+MP:0001718,abnormal visceral yolk sac morphology,30,30
+MP:0002753,dilated heart left ventricle,53,30
+MP:0010579,increased heart left ventricle size,30,30
+MP:0000150,abnormal rib morphology,30,29
+MP:0000288,abnormal pericardium morphology,29,29
+MP:0001722,pale yolk sac,29,29
+MP:0002080,prenatal lethality,29,29
+MP:0002637,small uterus,30,29
+MP:0005287,narrow eye opening,30,29
+MP:0005655,increased aggression,29,29
+MP:0010092,increased circulating magnesium level,30,29
+MP:0011496,abnormal head size,32,29
+MP:0013129,abnormal tooth color,35,29
+MP:0000183,decreased circulating LDL cholesterol level,28,28
+MP:0000280,thin ventricular wall,29,28
+MP:0000759,abnormal skeletal muscle morphology,33,28
+MP:0004509,abnormal pelvic girdle bone morphology,28,28
+MP:0010087,increased circulating fructosamine level,28,28
+MP:0000269,abnormal heart looping,27,27
+MP:0000774,decreased brain size,39,27
+MP:0003229,abnormal vitelline vasculature morphology,27,27
+MP:0005542,cornea vascularization,28,27
+MP:0005012,decreased eosinophil cell number,31,26
+MP:0005084,abnormal gallbladder morphology,27,26
+MP:0008074,"increased CD4-positive, alpha-beta T cell number",32,26
+MP:0001413,abnormal response to new environment,25,25
+MP:0001672,abnormal embryo development,27,25
+MP:0005140,decreased cardiac muscle contractility,40,25
+MP:0008045,decreased NK cell number,37,25
+MP:0009552,urinary bladder obstruction,25,25
+MP:0001410,head bobbing,25,24
+MP:0002942,decreased circulating alanine transaminase level,24,24
+MP:0003313,abnormal locomotor activation,25,24
+MP:0005018,decreased T cell number,29,24
+MP:0008044,increased NK cell number,30,24
+MP:0002311,abnormal inspiratory capacity,27,23
+MP:0002944,increased lactate dehydrogenase level,24,23
+MP:0003604,single kidney,25,23
+MP:0008075,"decreased CD4-positive, alpha-beta T cell number",29,23
+MP:0010511,shortened PR interval,23,23
+MP:0000558,abnormal tibia morphology,22,22
+MP:0000572,abnormal autopod morphology,35,22
+MP:0000627,abnormal mammary gland morphology,23,22
+MP:0001200,thick skin,22,22
+MP:0004850,abnormal testis weight,22,22
+MP:0005576,decreased pulmonary ventilation,36,22
+MP:0005650,abnormal limb bud morphology,22,22
+MP:0008078,"increased CD8-positive, alpha-beta T cell number",31,22
+MP:0011964,increased total retina thickness,26,22
+MP:0000562,polydactyly,25,21
+MP:0005270,abnormal zygomatic bone morphology,21,21
+MP:0008040,decreased NK T cell number,30,21
+MP:0008797,facial cleft,23,21
+MP:0010570,prolonged ST segment,21,21
+MP:0011940,decreased food intake,23,21
+MP:0002102,abnormal ear morphology,20,20
+MP:0005316,abnormal response to tactile stimuli,20,20
+MP:0009342,enlarged gallbladder,21,20
+MP:0010378,increased respiratory quotient,20,20
+MP:0002546,mydriasis,19,19
+MP:0002997,enlarged seminal vesicle,19,19
+MP:0003442,decreased circulating glycerol level,19,19
+MP:0003443,increased circulating glycerol level,19,19
+MP:0004222,iris synechia,19,19
+MP:0011045,decreased lung elastance,50,19
+MP:0011047,increased lung tissue damping,27,19
+MP:0013771,decreased effector memory T-helper cell number,21,19
+MP:0002175,decreased brain weight,18,18
+MP:0002861,abnormal tail bud morphology,18,18
+MP:0003900,shortened QT interval,18,18
+MP:0008211,decreased mature B cell number,26,18
+MP:0000162,lordosis,17,17
+MP:0000579,abnormal nail morphology,22,17
+MP:0001260,increased body weight,21,17
+MP:0002759,abnormal caudal vertebrae morphology,17,17
+MP:0003271,abnormal duodenum morphology,18,17
+MP:0003425,abnormal optic vesicle formation,17,17
+MP:0005015,increased T cell number,24,17
+MP:0005296,abnormal humerus morphology,17,17
+MP:0009908,protruding tongue,17,17
+MP:0010507,shortened RR interval,17,17
+MP:0000556,abnormal hindlimb morphology,19,16
+MP:0000914,exencephaly,17,16
+MP:0001307,fused cornea and lens,16,16
+MP:0001726,abnormal allantois morphology,16,16
+MP:0003883,enlarged stomach,18,16
+MP:0009453,enhanced contextual conditioning behavior,16,16
+MP:0010168,"increased CD4-positive, CD25-positive, alpha-beta regulatory T cell number",19,16
+MP:0010580,decreased heart left ventricle size,19,16
+MP:0013435,"decreased CD8-positive, naive alpha-beta T cell number",28,16
+MP:0013436,"increased CD8-positive, naive alpha-beta T cell number",18,16
+MP:0000552,abnormal radius morphology,15,15
+MP:0000559,abnormal femur morphology,15,15
+MP:0000947,convulsive seizures,15,15
+MP:0001333,absent optic nerve,15,15
+MP:0001340,abnormal eyelid morphology,17,15
+MP:0002073,abnormal hair growth,20,15
+MP:0002078,abnormal glucose homeostasis,15,15
+MP:0002959,increased urine microalbumin level,17,15
+MP:0003896,prolonged PR interval,15,15
+MP:0005102,abnormal iris pigmentation,15,15
+MP:0005108,abnormal ulna morphology,15,15
+MP:0005387,immune system phenotype,19,15
+MP:0005573,increased pulmonary respiratory rate,16,15
+MP:0008821,increased blood uric acid level,15,15
+MP:0010571,shortened ST segment,15,15
+MP:0010895,increased lung compliance,19,15
+MP:0011044,increased lung elastance,41,15
+MP:0012361,decreased large unstained cell number,20,15
+MP:0013764,decreased T-helper cell number,17,15
+MP:0000277,abnormal heart shape,14,14
+MP:0000564,syndactyly,17,14
+MP:0000603,pale liver,14,14
+MP:0000783,abnormal forebrain morphology,15,14
+MP:0000841,abnormal hindbrain morphology,15,14
+MP:0005103,abnormal retina pigmentation,24,14
+MP:0009455,enhanced cued conditioning behavior,14,14
+MP:0013522,decreased memory-marker CD4-positive NK T cell number,17,14
+MP:0000322,increased granulocyte number,13,13
+MP:0001973,increased thermal nociceptive threshold,13,13
+MP:0002607,decreased basophil cell number,16,13
+MP:0003402,decreased liver weight,13,13
+MP:0004156,abnormal QT variability,13,13
+MP:0004613,fusion of vertebral arches,13,13
+MP:0004930,small epididymis,13,13
+MP:0005017,decreased B cell number,22,13
+MP:0010851,"decreased effector memory CD8-positive, alpha-beta T cell number",25,13
+MP:0011954,shortened PQ interval,13,13
+MP:0011999,abnormal tail length,14,13
+MP:0012121,sclerocornea,13,13
+MP:0013763,increased T-helper cell number,14,13
+MP:0000495,abnormal colon morphology,12,12
+MP:0000897,abnormal midbrain morphology,13,12
+MP:0000955,abnormal spinal cord morphology,12,12
+MP:0001102,small superior vagus ganglion,12,12
+MP:0010093,decreased circulating magnesium level,12,12
+MP:0011436,decreased urine magnesium level,12,12
+MP:0011951,increased cardiac stroke volume,12,12
+MP:0011971,increased circulating lactate dehydrogenase level,12,12
+MP:0013519,decreased CD4-positive NK T cell number,15,12
+MP:0000642,enlarged adrenal glands,11,11
+MP:0002824,abnormal chorioallantoic fusion,11,11
+MP:0009454,impaired contextual conditioning behavior,11,11
+MP:0009456,impaired cued conditioning behavior,11,11
+MP:0010099,abnormal thoracic cage shape,11,11
+MP:0011939,increased food intake,11,11
+MP:0012125,decreased bronchoconstrictive response,14,11
+MP:0000154,rib fusion,10,10
+MP:0000681,abnormal thyroid gland morphology,12,10
+MP:0001469,abnormal contextual conditioning behavior,28,10
+MP:0001516,abnormal motor coordination/balance,10,10
+MP:0001756,abnormal urination,10,10
+MP:0002981,increased liver weight,10,10
+MP:0004002,abnormal jejunum morphology,11,10
+MP:0004794,increased anti-nuclear antigen antibody level,38,10
+MP:0005014,increased B cell number,10,10
+MP:0005238,increased brain size,12,10
+MP:0005358,abnormal incisor morphology,10,10
+MP:0005544,cornea deposits,10,10
+MP:0005575,increased pulmonary ventilation,13,10
+MP:0006241,abnormal placement of pupils,10,10
+MP:0009263,abnormal eyelid fusion,10,10
+MP:0011625,cystolithiasis,11,10
+MP:0013513,decreased memory-marker CD4-negative NK T cell number,16,10
+MP:0013675,decreased Ly6C-positive mature NK cell number,12,10
+MP:0000458,abnormal mandible morphology,9,9
+MP:0000613,abnormal salivary gland morphology,11,9
+MP:0001192,scaly skin,9,9
+MP:0001575,cyanosis,9,9
+MP:0002581,abnormal ileum morphology,9,9
+MP:0003918,decreased kidney weight,16,9
+MP:0004882,enlarged lung,11,9
+MP:0005355,enlarged thyroid gland,11,9
+MP:0005630,increased lung weight,10,9
+MP:0008039,increased NK T cell number,11,9
+MP:0009931,abnormal skin appearance,9,9
+MP:0010574,dilated aorta,10,9
+MP:0013427,increased memory-marker NK cell number,17,9
+MP:0013430,"increased memory CD4-positive, CD25-positive, alpha-beta regulatory T cell number",22,9
+MP:0013514,increased memory-marker CD4-negative NK T cell number,14,9
+MP:0013523,increased memory-marker CD4-positive NK T cell number,9,9
+MP:0000550,abnormal forelimb morphology,9,8
+MP:0003064,decreased coping response,9,8
+MP:0003394,increased cardiac output,8,8
+MP:0005298,abnormal clavicle morphology,8,8
+MP:0005534,decreased body temperature,8,8
+MP:0008346,increased gamma-delta T cell number,15,8
+MP:0008501,increased IgG2b level,8,8
+MP:0011952,decreased cardiac stroke volume,8,8
+MP:0012768,decreased KLRG1-positive NK cell number,26,8
+MP:0013025,increased Ly6C low monocyte number,15,8
+MP:0030610,absent teeth,9,8
+MP:0000452,abnormal mouth morphology,7,7
+MP:0001127,small ovary,7,7
+MP:0001491,unresponsive to tactile stimuli,13,7
+MP:0002066,abnormal motor capabilities/coordination/movement,7,7
+MP:0002497,increased IgE level,7,7
+MP:0002691,small stomach,8,7
+MP:0002697,abnormal eye size,7,7
+MP:0003043,hypoalgesia,7,7
+MP:0003393,decreased cardiac output,7,7
+MP:0003450,enlarged pancreas,7,7
+MP:0003642,absent seminal vesicle,7,7
+MP:0004857,abnormal heart weight,7,7
+MP:0004974,decreased regulatory T cell number,11,7
+MP:0005477,increased circulating thyroxine level,7,7
+MP:0005574,decreased pulmonary respiratory rate,7,7
+MP:0006415,absent testes,7,7
+MP:0010169,"decreased CD4-positive, CD25-positive, alpha-beta regulatory T cell number",7,7
+MP:0010835,"increased CD4-positive, alpha-beta memory T cell number",23,7
+MP:0010896,decreased lung compliance,9,7
+MP:0011471,decreased urine creatinine level,7,7
+MP:0011896,increased circulating unsaturated transferrin level,7,7
+MP:0011897,decreased circulating unsaturated transferrin level,7,7
+MP:0012000,abnormal limb position,7,7
+MP:0012767,increased KLRG1-positive NK cell number,25,7
+MP:0013433,"increased KLRG1-positive CD4-positive, CD25-positive, alpha-beta regulatory T cell number",22,7
+MP:0013520,increased CD4-positive NK T cell number,7,7
+MP:0000149,abnormal scapula morphology,6,6
+MP:0000433,microcephaly,6,6
+MP:0000467,abnormal esophagus morphology,6,6
+MP:0001191,abnormal skin condition,6,6
+MP:0001454,abnormal cued conditioning behavior,6,6
+MP:0001759,increased urine glucose level,6,6
+MP:0002095,abnormal skin pigmentation,6,6
+MP:0002187,abnormal fibula morphology,6,6
+MP:0002282,abnormal trachea morphology,8,6
+MP:0003641,small lung,8,6
+MP:0005586,decreased tidal volume,9,6
+MP:0008499,increased IgG1 level,6,6
+MP:0008725,increased heart atrium size,7,6
+MP:0009198,abnormal male genitalia morphology,9,6
+MP:0009806,abnormal otic vesicle morphology,6,6
+MP:0011941,increased fluid intake,6,6
+MP:0012765,decreased alpha-beta T cell number,14,6
+MP:0013022,increased Ly6C high monocyte number,8,6
+MP:0013418,increased memory-marker gamma-delta T cell number,11,6
+MP:0013426,decreased memory-marker NK cell number,7,6
+MP:0013510,decreased CD4-negative NK T cell number,6,6
+MP:0013669,decreased Ly6C-positive immature NK cell number,6,6
+MP:0020422,decreased freezing behavior,7,6
+MP:0000202,abnormal circulating alkaline phosphatase level,5,5
+MP:0000334,decreased granulocyte number,5,5
+MP:0001317,abnormal pupil morphology,5,5
+MP:0001408,stereotypic behavior,6,5
+MP:0001565,abnormal circulating phosphate level,5,5
+MP:0002067,abnormal sensory capabilities/reflexes/nociception,5,5
+MP:0002177,abnormal outer ear morphology,5,5
+MP:0002217,small lymph nodes,5,5
+MP:0002544,brachydactyly,7,5
+MP:0003049,abnormal lumbar vertebrae morphology,5,5
+MP:0003063,increased coping response,5,5
+MP:0004848,abnormal liver size,5,5
+MP:0004958,enlarged prostate gland,5,5
+MP:0005176,eyelids fail to open,5,5
+MP:0005388,respiratory system phenotype,5,5
+MP:0005478,decreased circulating thyroxine level,5,5
+MP:0008124,decreased plasmacytoid dendritic cell number,11,5
+MP:0008174,decreased follicular B cell number,8,5
+MP:0011048,decreased lung tissue damping,7,5
+MP:0013406,abnormal epidermal immune compartment,5,5
+MP:0013679,increased Ly6C-positive NK T cell number,6,5
+MP:0013775,increased KLRG1-positive T-helper cell number,9,5
+MP:0002074,abnormal hair texture,4,4
+MP:0002160,abnormal reproductive system morphology,4,4
+MP:0002176,increased brain weight,4,4
+MP:0002804,abnormal motor learning,8,4
+MP:0003050,abnormal sacral vertebrae morphology,4,4
+MP:0003257,abnormal abdominal wall morphology,4,4
+MP:0003671,abnormal eyelid aperture,4,4
+MP:0003866,abnormal defecation,4,4
+MP:0003929,decreased heart rate variability,4,4
+MP:0004083,polysyndactyly,4,4
+MP:0004085,abnormal heartbeat,4,4
+MP:0004727,absent epididymis,4,4
+MP:0005313,absent adrenal gland,4,4
+MP:0008097,increased plasma cell number,7,4
+MP:0008127,decreased dendritic cell number,6,4
+MP:0008173,increased follicular B cell number,9,4
+MP:0008182,decreased marginal zone B cell number,6,4
+MP:0008207,decreased B-2 B cell number,4,4
+MP:0008524,increased plasmacytoid dendritic cell number,9,4
+MP:0010096,abnormal incisor color,4,4
+MP:0010463,aorta stenosis,4,4
+MP:0010936,decreased airway resistance,7,4
+MP:0011953,prolonged PQ interval,4,4
+MP:0013154,increased KLRG1+ CD8 alpha-beta T cell number,9,4
+MP:0013157,increased KLRG1+ CD4 alpha-beta T cell number,9,4
+MP:0013189,abnormal exploration in a new environment,4,4
+MP:0013421,increased CD5-positive gamma-delta T cell number,8,4
+MP:0013511,increased CD4-negative NK T cell number,5,4
+MP:0013649,decreased CD11b-high dendritic cell number,6,4
+MP:0013678,decreased Ly6C-positive NK T cell number,4,4
+MP:0013691,decreased CD5-positive Ly6C-positive T cell number,4,4
+MP:0000161,scoliosis,3,3
+MP:0000181,abnormal circulating LDL cholesterol level,3,3
+MP:0000492,abnormal rectum morphology,3,3
+MP:0000585,kinked tail,4,3
+MP:0000690,absent spleen,3,3
+MP:0000757,herniated abdominal wall,3,3
+MP:0001158,abnormal prostate gland morphology,3,3
+MP:0001362,abnormal anxiety-related response,3,3
+MP:0001712,abnormal placenta development,3,3
+MP:0002337,abnormal whole-body plethysmography,14,3
+MP:0002494,increased IgM level,3,3
+MP:0002731,megacolon,4,3
+MP:0002750,exophthalmos,3,3
+MP:0003051,curly tail,4,3
+MP:0003578,absent ovary,3,3
+MP:0003867,increased defecation amount,3,3
+MP:0003884,decreased macrophage cell number,3,3
+MP:0003998,decreased thermal nociceptive threshold,3,3
+MP:0004152,abnormal circulating iron level,3,3
+MP:0004819,decreased skeletal muscle mass,4,3
+MP:0005533,increased body temperature,3,3
+MP:0005543,decreased cornea thickness,5,3
+MP:0005571,decreased lactate dehydrogenase level,3,3
+MP:0005585,increased tidal volume,6,3
+MP:0008024,absent lymph nodes,5,3
+MP:0008126,increased dendritic cell number,5,3
+MP:0008168,decreased B-1a cell number,3,3
+MP:0008210,increased mature B cell number,4,3
+MP:0008215,decreased immature B cell number,4,3
+MP:0008347,decreased gamma-delta T cell number,6,3
+MP:0008854,bleb,3,3
+MP:0009199,abnormal external male genitalia morphology,3,3
+MP:0009516,enlarged salivary gland,3,3
+MP:0009923,decreased transitional stage T1 B cell number,4,3
+MP:0009926,decreased transitional stage T2 B cell number,4,3
+MP:0010091,decreased circulating creatine kinase level,3,3
+MP:0010838,"increased CD8-positive, alpha-beta memory T cell number",8,3
+MP:0012122,abnormal iris transillumination,3,3
+MP:0013417,decreased memory-marker gamma-delta T cell number,3,3
+MP:0013630,increased bone trabecular spacing,3,3
+MP:0013648,increased CD11b-high dendritic cell number,3,3
+MP:0013651,increased CD11b-low dendritic cell number,4,3
+MP:0013654,increased CD103-positive CD11b-low dendritic cell number,3,3
+MP:0013666,decreased immature NK cell number,5,3
+MP:0013672,decreased mature NK cell number,5,3
+MP:0013676,increased Ly6C-positive mature NK cell number,3,3
+MP:0013886,"increased CD4-negative, CD25-positive NK T cell number",3,3
+MP:0013890,"increased CD8-positive, CD25-positive alpha-beta T cell number",3,3
+MP:0000188,abnormal circulating glucose level,2,2
+MP:0000705,athymia,4,2
+MP:0001199,thin skin,3,2
+MP:0001324,abnormal eye pigmentation,2,2
+MP:0001349,excessive tearing,2,2
+MP:0001725,abnormal umbilical cord morphology,2,2
+MP:0001806,decreased IgM level,2,2
+MP:0002397,abnormal bone marrow morphology,2,2
+MP:0002492,decreased IgE level,2,2
+MP:0002495,increased IgA level,2,2
+MP:0002727,decreased circulating insulin level,2,2
+MP:0003769,abnormal lip morphology,2,2
+MP:0003870,decreased urine glucose level,2,2
+MP:0003959,abnormal lean body mass,2,2
+MP:0004247,small pancreas,2,2
+MP:0004576,abnormal embryonic autopod plate morphology,2,2
+MP:0004955,increased thymus weight,2,2
+MP:0004973,increased regulatory T cell number,5,2
+MP:0005265,abnormal blood urea nitrogen level,2,2
+MP:0005266,abnormal metabolism,2,2
+MP:0005407,hyperalgesia,2,2
+MP:0005425,increased macrophage cell number,2,2
+MP:0005637,abnormal iron homeostasis,2,2
+MP:0005675,small gallbladder,2,2
+MP:0006065,abnormal heart position or orientation,4,2
+MP:0006353,increased glycosylated hemoglobin level,2,2
+MP:0008177,increased germinal center B cell number,6,2
+MP:0008181,increased marginal zone B cell number,3,2
+MP:0008428,abnormal spatial working memory,2,2
+MP:0008495,decreased IgG1 level,2,2
+MP:0008498,decreased IgG3 level,2,2
+MP:0008502,increased IgG3 level,2,2
+MP:0008730,fused phalanges,3,2
+MP:0008820,abnormal blood uric acid level,2,2
+MP:0008955,increased cellular hemoglobin content,2,2
+MP:0009208,abnormal female genitalia morphology,3,2
+MP:0009483,enlarged ileum,3,2
+MP:0010836,"decreased CD4-positive, alpha-beta memory T cell number",3,2
+MP:0010869,decreased bone trabecula number,2,2
+MP:0011435,increased urine magnesium level,2,2
+MP:0011503,distended jejunum,3,2
+MP:0011882,enlarged duodenum,3,2
+MP:0011942,decreased fluid intake,2,2
+MP:0011972,decreased circulating lactate dehydrogenase level,2,2
+MP:0012320,abnormal body fat mass,2,2
+MP:0012764,increased alpha-beta T cell number,9,2
+MP:0013017,"obsolete decreased CD4-positive, alpha beta T cell number",3,2
+MP:0013026,decreased Ly6C low monocyte number,5,2
+MP:0013429,"decreased memory CD4-positive, CD25-positive, alpha-beta regulatory T cell number",2,2
+MP:0013517,increased KLRG1-positive CD4-negative NK T cell number,3,2
+MP:0013667,increased immature NK cell number,2,2
+MP:0013670,increased Ly6C-positive immature NK cell number,3,2
+MP:0013673,increased mature NK cell number,2,2
+MP:0013774,decreased KLRG1-positive T-helper cell number,3,2
+MP:0020955,increased mechanical nociceptive threshold,2,2
+MP:0000023,abnormal ear position,1,1
+MP:0000180,abnormal circulating cholesterol level,1,1
+MP:0000574,abnormal foot pad morphology,1,1
+MP:0000618,small salivary gland,1,1
+MP:0000717,abnormal lymphocyte cell number,1,1
+MP:0001256,abnormal body length,1,1
+MP:0001259,abnormal body weight,1,1
+MP:0001296,macrophthalmia,1,1
+MP:0001330,abnormal optic nerve morphology,1,1
+MP:0001562,abnormal circulating calcium level,1,1
+MP:0001569,abnormal circulating bilirubin level,1,1
+MP:0001573,abnormal circulating alanine transaminase level,1,1
+MP:0001706,abnormal left-right axis patterning,1,1
+MP:0001807,decreased IgA level,1,1
+MP:0002286,cryptorchism,1,1
+MP:0002557,abnormal social/conspecific interaction behavior,1,1
+MP:0002774,small prostate gland,1,1
+MP:0002862,abnormal righting response,1,1
+MP:0002960,decreased urine microalbumin level,1,1
+MP:0003558,absent uterus,1,1
+MP:0003655,absent pancreas,2,1
+MP:0004266,pale placenta,1,1
+MP:0004818,increased skeletal muscle mass,1,1
+MP:0004956,decreased thymus weight,1,1
+MP:0005157,holoprosencephaly,2,1
+MP:0005452,abnormal adipose tissue amount,1,1
+MP:0005498,hyporesponsive to tactile stimuli,1,1
+MP:0005551,abnormal eye electrophysiology,1,1
+MP:0005563,abnormal hemoglobin content,1,1
+MP:0005631,decreased lung weight,2,1
+MP:0006351,abnormal glycosylated hemoglobin level,1,1
+MP:0006352,decreased glycosylated hemoglobin level,1,1
+MP:0008119,decreased Langerhans cell number,1,1
+MP:0008167,increased B-1a cell number,1,1
+MP:0008178,decreased germinal center B cell number,2,1
+MP:0008186,increased pro-B cell number,2,1
+MP:0008190,decreased transitional stage B cell number,1,1
+MP:0008206,increased B-2 B cell number,1,1
+MP:0008209,decreased pre-B cell number,1,1
+MP:0008214,increased immature B cell number,1,1
+MP:0008804,abnormal circulating amylase level,1,1
+MP:0009084,blind uterus,1,1
+MP:0009204,absent external male genitalia,1,1
+MP:0009211,absent external female genitalia,1,1
+MP:0009252,absent urinary bladder,1,1
+MP:0009477,small cecum,1,1
+MP:0009825,cornea ulcer,1,1
+MP:0009922,increased transitional stage T1 B cell number,2,1
+MP:0011816,decreased pre-pro B cell number,1,1
+MP:0011875,absent stomach,1,1
+MP:0011877,absent liver,1,1
+MP:0011969,abnormal circulating triglyceride level,1,1
+MP:0012124,increased bronchoconstrictive response,1,1
+MP:0012311,decreased defecation amount,1,1
+MP:0012440,abnormal neutrophil cell number,1,1
+MP:0013019,"obsolete increased CD8-positive, alpha beta T cell number",2,1
+MP:0013020,"obsolete decreased CD8-positive, alpha beta T cell number",2,1
+MP:0013023,decreased Ly6C high monocyte number,4,1
+MP:0013155,decreased KLRG1+ CD8 alpha-beta T cell number,1,1
+MP:0013410,decreased dendritic epidermal T cell number,1,1
+MP:0013412,increased Langerhans cell number,1,1
+MP:0013420,decreased CD5-positive gamma-delta T cell number,2,1
+MP:0013424,increased KLRG1-positive gamma-delta T cell number,3,1
+MP:0013652,decreased CD11b-low dendritic cell number,1,1
+MP:0013683,decreased early germinal center B cell number,1,1
+MP:0013684,increased early germinal center B cell number,3,1
+MP:0013685,decreased late germinal center B cell number,2,1
+MP:0013768,decreased marginal zone precursor B cell number,1,1
+MP:0013883,"increased CD4-positive, CD25-positive NK T cell number",1,1
+MP:0020954,decreased mechanical nociceptive threshold,1,1
