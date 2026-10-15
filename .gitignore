@@ -1,2 +1,7 @@
 .Rhistory
 .DStore
+.RData
+data/*.db
+data/*.db
+<path>
+data/statistical-result.db

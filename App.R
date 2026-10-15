@@ -1,26 +1,43 @@
-# 4/16/26 last update
+# 9/22/26 last update
 
 library(shiny)
 library(bslib)
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
+library(DBI)
+library(RSQLite)
 
 source("helpers/gene_set_val.R")
 source("helpers/GSEApreranked.R")
-source("helpers/blitzGSEA.R") # might have to interface with reticulate
+#source("helpers/blitzGSEA.R") # might have to interface with reticulate
 source("helpers/npGSEA.R")
+
+# https://posit.co/blog/shiny-with-databases
+impc_con <- dbConnect(SQLite(), "data/statistical-result.db")
+
+# READ THIS LATER: https://stackoverflow.com/questions/23276491/how-to-implement-a-cleanup-routine-in-r-shiny
+onStop(function() {
+  dbDisconnect(impc_con)
+})
 
 ui <- page_navbar(
   
   title = "IMPC-GSEA | Morgun-Shulzhenko Lab",
-
+  
   # PARAMETER + GSEA PAGE ++++++++++++++++++++++++++++++++++++
   nav_panel(
     "GSEA",
     layout_sidebar(
       sidebar = sidebar(
+        width = 350,
         card_header("User Selected Parameters"),
+        
+        ####################################
+        selectizeInput("selected_mp_term",
+                       "Select phenotype (MP term):",
+                       choices = NULL),
+        ####################################
         
         #=== upload file and make sure it is formatted correctly =======
         fileInput("user_gene_set",
@@ -30,14 +47,14 @@ ui <- page_navbar(
         textOutput("gene_set_check"),
         
         #==== collapse gene set to gene symbols, must provide CHIP file ========
-        #checkboxInput("collapsed",
-                      #label = "Collapse gene set to gene symbols?",
-                      #value = FALSE),
-        #conditionalPanel(
-          #condition = "input.collapsed == true",
-          #fileInput("chip_file", "Upload .CHIP file:"),
-          #textOutput("CHIP_check")
-        #),
+        checkboxInput("collapsed",
+                      label = "Collapse gene set to gene symbols?",
+                      value = FALSE),
+        conditionalPanel(
+          condition = "input.collapsed == true",
+          fileInput("chip_file", "Upload .CHIP file:"),
+          textOutput("CHIP_check")
+        ),
         
         #===== number of permutations ======
         numericInput("permutations",
@@ -62,14 +79,16 @@ ui <- page_navbar(
       ),
       
       # main panel — results go here
-      uiOutput("GSEA_RESULTS")
+      uiOutput("GSEA_RESULTS_FGSEA")
     )
   )
   
 ) # closes ui
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-server <- function(input, output) {
+####################################
+server <- function(input, output, session) {
+  ####################################
   
   # ==== check input gene set file formatting =====
   output$gene_set_check <- renderText({
@@ -92,9 +111,48 @@ server <- function(input, output) {
   has_run <- reactiveVal(FALSE)
   
   # example data, REMOVE LATER
-  ranks <- reactiveVal(setNames(exampleRanks, names(exampleRanks)))
+  #ranks <- reactiveVal(setNames(exampleRanks, names(exampleRanks)))
   
-  # ===== run GSEApreranked (with the sample data) =============================
+  #https://www.rdocumentation.org/packages/DBI/versions/0.5-1/topics/dbGetQuery
+  mp_terms <- reactive({
+    dbGetQuery(impc_con, "
+      SELECT DISTINCT mp_term_id, mp_term_name
+      FROM impc_stats
+      WHERE mp_term_id IS NOT NULL AND mp_term_id != ''
+      ORDER BY mp_term_name
+    ")
+  })
+  
+  observe({
+    mt <- mp_terms()
+    updateSelectizeInput(session, "selected_mp_term",
+                         choices = setNames(mt$mp_term_id, mt$mp_term_name),
+                         server = TRUE)
+  })
+  
+  ranks <- reactive({
+    req(input$selected_mp_term)
+    
+    df <- dbGetQuery(impc_con, "
+      SELECT marker_symbol, effect_size
+      FROM impc_stats
+      WHERE mp_term_id = ?
+        AND effect_size IS NOT NULL AND effect_size != ''
+        AND marker_symbol IS NOT NULL AND marker_symbol != ''
+    ", params = list(input$selected_mp_term))
+    
+    df$effect_size <- as.numeric(df$effect_size)
+    df <- df[!is.na(df$effect_size), ]
+    
+    df <- df |>
+      dplyr::group_by(marker_symbol) |>
+      dplyr::summarise(effect_size = mean(effect_size, na.rm = TRUE)) |>
+      dplyr::ungroup()
+    
+    setNames(df$effect_size, df$marker_symbol)
+  })
+  
+  # ===== run GSEApreranked (WITH SAMPLE DATA) =============================
   observeEvent(input$run, {
     if (input$null_model == "gene_set_permutation") {
       res <- runGSEApreranked(examplePathways, ranks(), nperm = input$permutations)
@@ -102,12 +160,26 @@ server <- function(input, output) {
       gsea_results(res)
       has_run(TRUE)
     }
+    
+    if (input$null_model == "blitz_gsea") {
+      res <- runGSEApreranked(examplePathways, ranks(), nperm = input$permutations)
+      message("blitz_gsea returned ", nrow(res), " rows")
+      gsea_results(res)
+      has_run(TRUE)
+    }
+    
+    if (input$null_model == "npgsea") {
+      res <- runGSEApreranked(examplePathways, ranks(), nperm = input$permutations)
+      message("npgsea returned ", nrow(res), " rows")
+      gsea_results(res)
+      has_run(TRUE)
+    }
   })
-
-  #spit out results for GSEApreranked
-  output$GSEA_RESULTS <- renderUI({
+  
+  # results for GSEApreranked
+  output$GSEA_RESULTS_FGSEA <- renderUI({
     if (!has_run()) {
-      p("Waiting for user to select parameters and start run.")
+      p("Waiting for user to select parameters.")
     } else {
       tagList(
         tableOutput("gsea_table"),
@@ -117,12 +189,12 @@ server <- function(input, output) {
     }
   })
   
-  output$gsea_table <- renderTable({
+  output$FGSEA_gsea_table <- renderTable({
     req(gsea_results())
     gsea_results() |> arrange(padj) |> head(20) |> dplyr::select(pathway, pval, padj, NES)
   })
   
-  output$gsea_plot <- renderPlot({
+  output$FGSEA_gsea_plot <- renderPlot({
     req(gsea_results())
     top_pathway <- gsea_results() |> arrange(padj) |> pull(pathway) |> head(10)
     plots <- lapply(top_pathway, function(pw) plotEnrichment(examplePathways[[pw]], ranks()))
@@ -130,7 +202,7 @@ server <- function(input, output) {
     plots[[1]]
   })
   
-  output$pathways_plot <- renderPlot({
+  output$FGSEA_pathways_plot <- renderPlot({
     req(gsea_results())
     res <- gsea_results()
     topPathwaysUp   <- res |> filter(ES > 0) |> arrange(pval) |> head(10) |> pull(pathway)
@@ -139,9 +211,11 @@ server <- function(input, output) {
     plotGseaTable(examplePathways[topPathways], ranks(), res, gseaParam = 0.5)
   })
   
+  
   # ===== run GSEA (with the sample data) =============================
   
   
-} # closes server
-
+}  #closes server
 shinyApp(ui = ui, server = server)
+
+
