@@ -7,6 +7,7 @@ suppressWarnings(suppressPackageStartupMessages({
 
 args <- commandArgs(trailingOnly=TRUE)
 gmt_file <- args[1]
+level <- args [2] #1 for mp_term_name, 2 for top_level_mp_term_name
 print(gmt_file)
 sets <- gmtPathways(gmt_file) 
 print("sets loaded")
@@ -14,27 +15,36 @@ print("sets loaded")
 # connect to the db table
 impc_con <- dbConnect(SQLite(), "data/statistical-result.db")
 
+if(level == 1){
+  mp_term2parameter <- dbGetQuery(impc_con, "
+  SELECT DISTINCT mp_term_name, mp_term_id, parameter_stable_id, parameter_name
+    FROM impc_stats
+    WHERE mp_term_name IS NOT NULL
+    AND TRIM(mp_term_name) != ''
+    AND mp_term_id LIKE 'MP:%'")
+} else if (level == 2){
+  mp_term2parameter <- dbGetQuery(impc_con, "
+  SELECT DISTINCT top_level_mp_term_name AS mp_term_name, top_level_mp_term_id AS mp_term_id, parameter_stable_id, parameter_name
+    FROM impc_stats
+    WHERE top_level_mp_term_name IS NOT NULL
+    AND TRIM(top_level_mp_term_name) != ''
+    AND top_level_mp_term_id LIKE 'MP:%'")
+} else {
+  print("Didn't select 1 or 2!!")
+}
+
 # all rows with an effect size
 data <- dbGetQuery(impc_con, "
   SELECT parameter_stable_id, marker_accession_id, marker_symbol, effect_size, p_value
   FROM impc_stats
   WHERE effect_size IS NOT NULL")
 
-# param <-> mp term 
-#TODO: how to get distinct id pairings but not care about names? how to do that in SQL
-mp_term2parameter <- dbGetQuery(impc_con, "
-  SELECT DISTINCT mp_term_name, mp_term_id, parameter_stable_id, parameter_name
-  FROM impc_stats
-  WHERE mp_term_name IS NOT NULL")
-print(nrow(mp_term2parameter))
-
 dbDisconnect(impc_con)
 
-
 # lowest p-value and largest effect size represents all gene-parameter pairs 
-#NEED TO CHANGE TO LOWEST P-VALUE + MAX(EFFECT SIZE) !!
+#NEED TO CHANGE TO LOWEST P-VALUE + MAX(EFFECT SIZE) FOR EACH ZYGOSITY/GENE/PARAM!!
 data_grouped <- data |> group_by(parameter_stable_id, marker_accession_id, marker_symbol) |> 
-  summarise(score = max(effect_size), #flatten each row into max effect size and smallest p
+  summarise(es = max(effect_size), #flatten each row into max effect size and smallest p
             p = min(p_value, na.rm = TRUE), 
             .groups = "drop")
 
@@ -54,17 +64,20 @@ for (i in seq_along(mp_terms)) {
   
   if (nrow(cdata) == 0) next
   
-  # best score/p-value per gene across all parameters associated with the mp_term
+  # best effect size/p-value per gene across all parameters associated with the mp_term
   gene_summary <- cdata |>
     group_by(marker_accession_id) |>
-    summarise(score = max(as.numeric(score), na.rm = TRUE), 
+    summarise(es = max(as.numeric(es), na.rm = TRUE), 
               p = min(as.numeric(p), na.rm = TRUE), 
               .groups = "drop"
-     ) |> filter(!is.na(marker_accession_id) & marker_accession_id != "")
+    ) |> filter(!is.na(marker_accession_id) & marker_accession_id != "")
   
   # RANK TERMS
   gene_ranked <- gene_summary |> mutate(p = pmax(p, 1e-300, na.rm = TRUE),
-                                        rank_metric = -log10(p) * sign(score))
+                                        rank_metric = -log10(p) * sign(es))
+  
+  # SIGNED P-VAL AS RANKING METRIC: 
+  #https://bioinformatics.ccr.cancer.gov/docs/btep-coding-club/CC2025/GSEA/GSEA/
   
   ranks <- setNames(gene_ranked$rank_metric, gene_ranked$marker_accession_id)
   
@@ -83,10 +96,9 @@ for (i in seq_along(mp_terms)) {
             # "For some pathways, in reality P-values are less than 1e-10. 
             #You can set the `eps` argument to zero for better estimation."
             eps      = 0.0, 
-            minSize  = 3,
+            minSize  = 3, #what do we want the minimum number of gene overlap to be?
             maxSize  = 500,
             nPermSimple = 1000)
-      #what do we want the minimum number of gene overlap to be?
     }, error = function(e) {
       message("Error: term: ", cterm, ": ", e$message)
       NULL
@@ -96,8 +108,14 @@ for (i in seq_along(mp_terms)) {
   }
 }
 
+length(results_list); length(mp_terms)   # equal if no bug
+sum(names(results_list) == "" | is.na(names(results_list)))
+head(names(results_list))
+
 
 GSEA_RESULTS <- bind_rows(results_list, .id = "mp_term_query")
+
+#fgsea returns the leadingEdge column as a list (?) -> string for file
 GSEA_RESULTS$leadingEdge <- sapply(GSEA_RESULTS$leadingEdge, paste, collapse = ",")
 
 head(GSEA_RESULTS)
@@ -114,4 +132,3 @@ write.csv(GSEA_RESULTS, file = "fgsea_results.csv")
 #https://cnuge.github.io/post/trycatch/
 #https://bioinformatics-core-shared-training.github.io/cruk-summer-school-2018/RNASeq2018/html/06_Gene_set_testing.nb.html
 #https://stackoverflow.com/questions/78422148/understanding-the-purpose-of-groups-drop-in-dplyrs-summarise-function
-
