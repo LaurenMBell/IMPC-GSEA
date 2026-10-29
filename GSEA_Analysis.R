@@ -4,6 +4,7 @@ suppressWarnings(suppressPackageStartupMessages({
   library(DBI)
   library(RSQLite)
 }))
+set.seed(42)
 
 args <- commandArgs(trailingOnly=TRUE)
 gmt_file <- args[1]
@@ -44,7 +45,7 @@ dbDisconnect(impc_con)
 # lowest p-value and largest effect size represents all gene-parameter pairs 
 #NEED TO CHANGE TO LOWEST P-VALUE + MAX(EFFECT SIZE) FOR EACH ZYGOSITY/GENE/PARAM!!
 data_grouped <- data |> group_by(parameter_stable_id, marker_accession_id, marker_symbol) |> 
-  summarise(es = max(effect_size), #flatten each row into max effect size and smallest p
+  summarise(es = max(abs(effect_size)), #flatten each row into max effect size and smallest p
             p = min(p_value, na.rm = TRUE), 
             .groups = "drop")
 
@@ -117,8 +118,6 @@ GSEA_RESULTS <- bind_rows(results_list, .id = "mp_term_query")
 
 #fgsea returns the leadingEdge column as a list (?) -> string for file
 GSEA_RESULTS$leadingEdge <- sapply(GSEA_RESULTS$leadingEdge, paste, collapse = ",")
-
-head(GSEA_RESULTS)
 
 if(level == 2){
   write.csv(GSEA_RESULTS, file = "top_level_mp_term_fgsea_results.csv")
