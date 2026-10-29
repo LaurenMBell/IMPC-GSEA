@@ -120,7 +120,11 @@ GSEA_RESULTS$leadingEdge <- sapply(GSEA_RESULTS$leadingEdge, paste, collapse = "
 
 head(GSEA_RESULTS)
 
-write.csv(GSEA_RESULTS, file = "fgsea_results.csv")
+if(level == 2){
+  write.csv(GSEA_RESULTS, file = "top_level_mp_term_fgsea_results.csv")
+} else if (level ==1) {
+  write.csv(GSEA_RESULTS, file = "mp_term_fgsea_results.csv")
+}
 #=======================================
 #https://cran.r-project.org/web/packages/RSQLite/RSQLite.pdf
 #https://posit.co/blog/shiny-with-databases
